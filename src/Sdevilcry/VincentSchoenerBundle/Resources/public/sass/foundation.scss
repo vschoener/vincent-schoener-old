@@ -36,6 +36,10 @@
   }
 }
 
+header#navigation {
+  background: #F9F9F9;
+}
+
 
 #home {
   h1.home-title {
@@ -123,10 +127,14 @@
 }
 
 #skill .regular-text {
-  color:$aluminum;
+  color:$iron;
 }
 
 .experience-inner .experience-container {
+}
+
+.contain-to-grid.sticky.fixed {
+  border-bottom: 1px solid $iron;
 }
 
 #education {

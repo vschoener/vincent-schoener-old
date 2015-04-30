@@ -131,7 +131,7 @@ select {
 
 .row {
   margin: 0 auto;
-  max-width: 62.5rem;
+  max-width: 73.125rem;
   width: 100%; }
   .row:before, .row:after {
     content: " ";
@@ -3981,7 +3981,7 @@ ul.pagination {
     .reveal-modal {
       left: 0;
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 73.125rem;
       right: 0;
       width: 80%; } }
   @media only screen and (min-width: 45.063em) {
@@ -3997,35 +3997,35 @@ ul.pagination {
     .reveal-modal.tiny {
       left: 0;
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 73.125rem;
       right: 0;
       width: 30%; } }
   @media only screen and (min-width: 45.063em) {
     .reveal-modal.small {
       left: 0;
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 73.125rem;
       right: 0;
       width: 40%; } }
   @media only screen and (min-width: 45.063em) {
     .reveal-modal.medium {
       left: 0;
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 73.125rem;
       right: 0;
       width: 60%; } }
   @media only screen and (min-width: 45.063em) {
     .reveal-modal.large {
       left: 0;
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 73.125rem;
       right: 0;
       width: 70%; } }
   @media only screen and (min-width: 45.063em) {
     .reveal-modal.xlarge {
       left: 0;
       margin: 0 auto;
-      max-width: 62.5rem;
+      max-width: 73.125rem;
       right: 0;
       width: 95%; } }
   .reveal-modal.full {
@@ -4040,7 +4040,7 @@ ul.pagination {
       .reveal-modal.full {
         left: 0;
         margin: 0 auto;
-        max-width: 62.5rem;
+        max-width: 73.125rem;
         right: 0;
         width: 100%; } }
   .reveal-modal.toback {
@@ -4930,7 +4930,7 @@ meta.foundation-mq-topbar {
   .contain-to-grid .top-bar {
     margin-bottom: 0;
     margin: 0 auto;
-    max-width: 62.5rem; }
+    max-width: 73.125rem; }
 
   .top-bar-section {
     transition: none 0 0;
@@ -6347,6 +6347,9 @@ th.hide-for-touch {
   .top-bar-section ul li a:hover, .top-bar-section ul li a.active {
     border-bottom-color: #008CBA; }
 
+header#navigation {
+  background: #F9F9F9; }
+
 #home h1.home-title {
   color: #F9F9F9; }
 #home h2 {
@@ -6405,7 +6408,10 @@ th.hide-for-touch {
   color: #008CBA; }
 
 #skill .regular-text {
-  color: #999999; }
+  color: #CCCCCC; }
+
+.contain-to-grid.sticky.fixed {
+  border-bottom: 1px solid #CCCCCC; }
 
 #education .regular-text, #education h2.title {
   color: #EEEEEE; }
