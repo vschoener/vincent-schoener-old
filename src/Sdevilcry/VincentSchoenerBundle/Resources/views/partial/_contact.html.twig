@@ -9,7 +9,7 @@
                         <ul class="clearfix contact-info">
                             <li><a href="">+33 6 59 77 32 22</a>
                             </li>
-                            <li><a href=""><a href="mailto:vincent.schoener@gmail.com">vincent.schoener@gmail.com</a>
+                            <li><a href="mailto:vincent.schoener@gmail.com">vincent.schoener@gmail.com</a>
                             </li>
                             <li><a href="">www.vincent-schoener.fr</a>
                             </li>
@@ -31,22 +31,25 @@
                     <!-- Contact Form start -->
                     <div class="small-12 medium-5 columns">
                         <div class="clearfix card-panel grey lighten-5 cform-wrapper">
-                            <form action="#" id="contactForm" novalidate="">
+                            <form id="contactForm" data-abide>
                                 <div class="input-field">
-                                    <input id="contact_name" type="text" name="contactName" class="validate input-box">
                                     <label for="contact_name" class="input-label">Nom</label>
+                                    <input id="contact_name" type="text" name="contactName" class="validate input-box" required="">
+                                    <small class="error">Merci de renseigner votre Nom et / ou Prénom</small>
                                 </div>
                                 <div class="input-field">
-                                    <input id="email" type="email" name="contactEmail" class="validate input-box">
                                     <label for="email" class="input-label">Email</label>
+                                    <input id="email" type="email" name="contactEmail" class="validate input-box" required>
+                                    <small class="error">Merci de renseigner votre email</small>
                                 </div>
                                 <div class="input-field">
-                                    <input id="subject" type="text" name="contactSubject" class="validate input-box">
                                     <label for="subject" class="input-label">Sujet</label>
+                                    <input id="subject" type="text" name="contactSubject" class="validate input-box" required>
+                                    <small class="error">Merci de renseigner l'intitulé du message</small>
                                 </div>
                                 <div class="input-field textarea-input">
-                                    <textarea id="textarea1" name="contactMessage" class="validate materialize-textarea" style="height: 22px;"></textarea>
-                                    <label for="textarea1" class="input-label">Message</label>
+                                    <textarea id="textarea1" name="contactMessage" class="validate materialize-textarea" style="height: 22px;" required></textarea>
+                                    <small class="error">N'oubliez pas de laisser un petit message :)</small>
                                 </div>
                                 <div class="input-field submit-wrap clearfix">
                                     <button type="submit" class="left button primary">Envoyer</button>
