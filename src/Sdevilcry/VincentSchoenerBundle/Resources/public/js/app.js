@@ -523,72 +523,74 @@ if ( $countNumb.length > 0 ) {
     });
 }
 
+/**
+ * Handle Contact section
+ * @returns {{init: Function}}
+ * @constructor
+ */
+var Contact = function() {
 
+    var self = this;
 
-$('#contactForm').on('submit', function(e){
-    e.preventDefault();
-    var $this = $(this),
-        data = $(this).serialize(),
-        name = $this.find('#contact_name'),
-        email = $this.find('#email'),
-        message = $this.find('#textarea1'),
-        loader = $this.find('.form-loader-area'),
-        submitBtn = $this.find('button, input[type="submit"]');
+    self.$form = $('#contactForm');
+    self.loader = self.$form.find('.form-loader-area');
+    self.submitButton = self.$form.find('button, input[type="submit"]');
 
-    loader.show();
-    submitBtn.attr('disabled', 'disabled');
+    self.handleErrorForm = function() {
+        self.$form.find('input.invalid, textarea.invalid').removeClass('invalid');
+    };
 
-    function success(response) {
+    self.handleSucceedForm = function() {
         swal("Thanks!", "Your message has been sent successfully!", "success");
-        $this.find("input, textarea").val("");
+        self.$form.find("input, textarea").val("");
+    };
+
+    self.watchForm = function() {
+
+        self.$form.on('submit', function(e) {
+            self.loader.show();
+            self.submitButton.attr('disabled', 'disabled');
+
+            if (this.checkValidity()) {
+
+                var data = self.$form.serialize();
+
+                $.ajax({
+                    type: "POST",
+                    url: self.$form.attr('action'),
+                    data: data,
+                    dataType: 'json'
+                }).success(function(json) {
+
+                    if (json.state == 'success') {
+                        self.handleSucceedForm();
+                    } else {
+                        self.handleErrorForm(json);
+                    }
+
+                }).fail(function(){
+                    sweetAlert("Oops...", "Une erreur technique est survenue.. Merci de réessayer une nouvelle fois !", "error");
+                }).done(function(e) {
+                    var hand = setTimeout(function(){
+                        self.loader.hide();
+                        self.submitButton.removeAttr('disabled');
+                        clearTimeout(hand);
+                    }, 1000);
+                });
+            }
+            e.preventDefault();
+            return false;
+        });
+    };
+
+    return {
+        init: function() {
+            self.watchForm();
+        }
     }
-
-    function error(response) {
-        $this.find('input.invalid, textarea.invalid').removeClass('invalid');
-        if ( response.name ) {
-            name.removeClass('valid').addClass('invalid');
-        }
-
-        if ( response.email ) {
-            email.removeClass('valid').addClass('invalid');
-        }
-
-        if ( response.message ) {
-            message.removeClass('valid').addClass('invalid');
-        }
-    }
-
-    $.ajax({
-        type: "POST",
-        url: "inc/sendEmail.php",
-        data: data
-    }).done(function(res){
-
-        var response = JSON.parse(res);
-
-        if ( response.OK ) {
-            success(response);
-        } else {
-            error(response);
-        }
-
-
-        var hand = setTimeout(function(){
-            loader.hide();
-            submitBtn.removeAttr('disabled');
-            clearTimeout(hand);
-        }, 1000);
-
-    }).fail(function(){
-        sweetAlert("Oops...", "Une erreur technique est survenue.. Merci de réessayer une nouvelle fois !", "error");
-        var hand = setTimeout(function(){
-            loader.hide();
-            submitBtn.removeAttr('disabled');
-            clearTimeout(hand);
-        }, 1000);
-    });
-});
+};
 
 $(function() {
     $(document).foundation();
+    (new Contact()).init();
 })

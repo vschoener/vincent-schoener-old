@@ -31,7 +31,7 @@
                     <!-- Contact Form start -->
                     <div class="small-12 medium-5 columns">
                         <div class="clearfix card-panel grey lighten-5 cform-wrapper">
-                            <form id="contactForm" data-abide>
+                            <form action="{{ path('submitContactForm') }}" id="contactForm" methode="POST" data-abide>
                                 <div class="input-field">
                                     <label for="contact_name" class="input-label">Nom</label>
                                     <input id="contact_name" type="text" name="contactName" class="validate input-box" required="">
@@ -40,7 +40,7 @@
                                 <div class="input-field">
                                     <label for="email" class="input-label">Email</label>
                                     <input id="email" type="email" name="contactEmail" class="validate input-box" required>
-                                    <small class="error">Merci de renseigner votre email</small>
+                                    <small class="error">Merci de renseigner votre email au bon format john@doe.com</small>
                                 </div>
                                 <div class="input-field">
                                     <label for="subject" class="input-label">Sujet</label>
