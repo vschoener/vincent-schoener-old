@@ -504,11 +504,11 @@ $(window).load(function(){
     });
 
 
-    /* // Wow init
+     // Wow init
      new WOW({
-     offset: 200,
-     mobile: false
-     }).init();*/
+         offset: 200,
+         mobile: false
+     }).init();
 });
 
 
@@ -580,7 +580,7 @@ $('#contactForm').on('submit', function(e){
         }, 1000);
 
     }).fail(function(){
-        sweetAlert("Oops...", "Something went wrong, Try again later!", "error");
+        sweetAlert("Oops...", "Une erreur technique est survenue.. Merci de réessayer une nouvelle fois !", "error");
         var hand = setTimeout(function(){
             loader.hide();
             submitBtn.removeAttr('disabled');
