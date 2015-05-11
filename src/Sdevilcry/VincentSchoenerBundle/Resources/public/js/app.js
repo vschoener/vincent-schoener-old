@@ -536,8 +536,9 @@ var Contact = function() {
     self.loader = self.$form.find('.form-loader-area');
     self.submitButton = self.$form.find('button, input[type="submit"]');
 
-    self.handleErrorForm = function() {
+    self.handleErrorForm = function(json) {
         self.$form.find('input.invalid, textarea.invalid').removeClass('invalid');
+        sweetAlert("Petit problème...", json.errorMessage, "error");
     };
 
     self.handleSucceedForm = function() {
@@ -548,10 +549,10 @@ var Contact = function() {
     self.watchForm = function() {
 
         self.$form.on('submit', function(e) {
-            self.loader.show();
-            self.submitButton.attr('disabled', 'disabled');
 
             if (this.checkValidity()) {
+                self.loader.show();
+                self.submitButton.attr('disabled', 'disabled');
 
                 var data = self.$form.serialize();
 
@@ -562,7 +563,7 @@ var Contact = function() {
                     dataType: 'json'
                 }).success(function(json) {
 
-                    if (json.state == 'success') {
+                    if (json.state == 'succeed') {
                         self.handleSucceedForm();
                     } else {
                         self.handleErrorForm(json);
@@ -586,6 +587,7 @@ var Contact = function() {
     return {
         init: function() {
             self.watchForm();
+            return this;
         }
     }
 };
