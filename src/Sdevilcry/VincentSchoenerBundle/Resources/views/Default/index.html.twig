@@ -3,103 +3,85 @@
 {% block content %}
     <section id="home" class="scroll-section">
         <div class="sec-overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="small-12 column">
-                        <div class="home-inner">
-                            <div class="text-center home-content">
-                                <h1 class="home-title">
-                                    Hey ! Je suis <br />
-                                    <span>Vincent Schoener</span>
-                                </h1>
-                                <h2 class="home-subtitle">Développeur à Paris, France</h2>
-                                <a href="mailto:vincent.schoener@gmail.com" class="button primary">
-                                    <i class="fa fa-envelope-o"></i> Me recruter
-                                </a>
-                            </div>
+            <div class="row">
+                <div class="small-12 column">
+                    <div class="home-inner">
+                        <div class="text-center home-content">
+                            <h1 class="home-title">
+                                Hey ! Je suis <br />
+                                <span>Vincent Schoener</span>
+                            </h1>
+                            <h2 class="home-subtitle">Développeur à Paris, France</h2>
+                            <a href="mailto:vincent.schoener@gmail.com" class="button primary">
+                                <i class="fa fa-envelope-o"></i> Me recruter
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="section-call-to-area">
-                <div class="container">
-                    <div class="row">
-                        <a href="#about" class="btn-floating btn-large button-middle call-to-about section-call-to-btn animated btn-show text-center" data-section="#about">
-                            <i class="fa fa-arrow-down"></i>
-                        </a>
-                    </div>
+                <div class="row">
+                    <a href="#about" class="btn-floating btn-large button-middle call-to-about section-call-to-btn animated btn-show text-center" data-section="#about">
+                        <i class="fa fa-arrow-down"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="about" class="scroll-section root-sec padd-tb-60 grey lighten-5 about-wrap">
-        <div class="container">
-            {% include "SdevilcryVincentSchoenerBundle::partial/_about-me.html.twig" %}
-        </div>
-        <!-- .container end -->
+        {% include "SdevilcryVincentSchoenerBundle::partial/_about-me.html.twig" %}
     </section>
 
     <section id="skill" class="scroll-section root-sec white skill-wrap">
         <div class="sec-overlay">
-            <div class="container">
-                {% include "SdevilcryVincentSchoenerBundle::partial/_skill.html.twig" %}
-            </div>
+            {% include "SdevilcryVincentSchoenerBundle::partial/_skill.html.twig" %}
         </div>
-        <!-- .container end -->
     </section>
 
     <section id="experience" class="scroll-section root-sec padd-tb-120 brand-bg experience-wrap">
-        <div class="container">
-            {% include "SdevilcryVincentSchoenerBundle::partial/_experience.html.twig" %}
-        </div>
+        {% include "SdevilcryVincentSchoenerBundle::partial/_experience.html.twig" %}
     </section>
 
     <section id="education" class="scroll-section root-secbrand-bg">
         <div class="sec-overlay lighter padd-tb-120">
-            <div class="container">
-                {% include "SdevilcryVincentSchoenerBundle::partial/_education.html.twig" %}
-            </div>
+            {% include "SdevilcryVincentSchoenerBundle::partial/_education.html.twig" %}
         </div>
     </section>
 
-   {# <section id="testimonial" class="scroll-section root-secbrand-bg">
-        <div class="sec-overlay lighter padd-tb-120">
-            <div class="container">
-                {% include "SdevilcryVincentSchoenerBundle::partial/_testimonial.html.twig" %}
-            </div>
-        </div>
-    </section>#}
+    {# <section id="testimonial" class="scroll-section root-secbrand-bg">
+         <div class="sec-overlay lighter padd-tb-120">
+             <div class="container">
+                 {% include "SdevilcryVincentSchoenerBundle::partial/_testimonial.html.twig" %}
+             </div>
+         </div>
+     </section>#}
 
     <section id="contact" class="scroll-section root-secbrand-bg">
         <div class="sec-overlay lighter padd-tb-120">
-            <div class="container">
-                {% include "SdevilcryVincentSchoenerBundle::partial/_contact.html.twig" %}
-            </div>
+            {% include "SdevilcryVincentSchoenerBundle::partial/_contact.html.twig" %}
         </div>
     </section>
 
     <footer id="footer" class="root-sec white root-sec footer-wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="clearfix footer-inner">
-                        <ul class="left social-icons">
-                            <li><a href="https://www.facebook.com/vintcentimes" class="tooltips tooltipped facebook"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="https://www.linkedin.com/profile/view?id=128811464" class="tooltips tooltipped linkedin"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                            <li><a href="https://twitter.com/VincentSchoener" class="tooltips tooltipped twitter"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="https://plus.google.com/u/0/112178834850865264182" class="tooltips tooltipped google-plus"><i class="fa fa-google-plus"></i></a>
-                            </li>
-                        </ul> <!-- ./social icons end -->
-                        <div class="right copyright">
-                            <p>Vincent Schoener © All Rights Reserved</p>
-                        </div>
+        <div class="row">
+            <div class="small-12">
+                <div class="clearfix footer-inner">
+                    <ul class="left social-icons">
+                        <li><a href="https://www.facebook.com/vintcentimes" class="tooltips tooltipped facebook"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/profile/view?id=128811464" class="tooltips tooltipped linkedin"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li><a href="https://twitter.com/VincentSchoener" class="tooltips tooltipped twitter"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://plus.google.com/u/0/112178834850865264182" class="tooltips tooltipped google-plus"><i class="fa fa-google-plus"></i></a>
+                        </li>
+                    </ul> <!-- ./social icons end -->
+                    <div class="right copyright">
+                        <p>Vincent Schoener © All Rights Reserved</p>
                     </div>
                 </div>
             </div>
-        </div> <!-- ./container end-->
+        </div>
     </footer>
 {% endblock %}

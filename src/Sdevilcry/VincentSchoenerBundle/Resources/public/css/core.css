@@ -580,7 +580,7 @@ header.nav.hide-menu {
 
 .person-info h5 span {
     display: inline-block;
-    min-width: 70px;
+    min-width: 150px;
 }
 
 .person-about > a.btn-large {
