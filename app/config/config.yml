@@ -65,10 +65,10 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport:  "%mailer_transport%"
-    host:       "%mailer_host%"
-    port:       "%mailer_port%"
-    encryption: "%mailer_encryption%"
-    username:   "%mailer_user%"
-    password:   "%mailer_password%"
+    transport:  smtp
+    host:       in-v3.mailjet.com
+    port:       587
+    encryption: tls
+    username:   6a155ed17ca9621ff40c15fead15f377
+    password:   c0ef235e29cb0282feb4ab385cbbdd21
     spool:      { type: memory }
