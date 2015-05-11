@@ -356,30 +356,30 @@ $(document).ready(function($) {
 
 $(window).load(function(){
 
-    $('#map').gmap3({
-        map:{
-            options:{
-                center:[48.8630375, 2.332297],
-                zoom:12,
-                mapTypeId: google.maps.MapTypeId.PLAN,
-                mapTypeControl: false,
-                mapTypeControlOptions: {
-                    style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-                },
-                navigationControl: false,
-                scrollwheel: false,
-                streetViewControl: false
-            }
-        },
-        marker: {
-            values: [
-                {latLng: [48.8630375, 2.332297], data: "Paris !"}
-            ],
-            options: {
-                draggable: false
-            }
-        }
-    });
+    //$('#map').gmap3({
+    //    map:{
+    //        options:{
+    //            center:[48.8630375, 2.332297],
+    //            zoom:12,
+    //            mapTypeId: google.maps.MapTypeId.PLAN,
+    //            mapTypeControl: false,
+    //            mapTypeControlOptions: {
+    //                style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+    //            },
+    //            navigationControl: false,
+    //            scrollwheel: false,
+    //            streetViewControl: false
+    //        }
+    //    },
+    //    marker: {
+    //        values: [
+    //            {latLng: [48.8630375, 2.332297], data: "Paris !"}
+    //        ],
+    //        options: {
+    //            draggable: false
+    //        }
+    //    }
+    //});
 
     // section calling
     $('.section-call-to-btn.call-to-home').waypoint({
@@ -538,7 +538,7 @@ var Contact = function() {
 
     self.handleErrorForm = function(json) {
         self.$form.find('input.invalid, textarea.invalid').removeClass('invalid');
-        sweetAlert("Petit problème...", json.errorMessage, "error");
+        sweetAlert("Petit problème cp,nce...", json.errorMessage, "error");
     };
 
     self.handleSucceedForm = function() {
