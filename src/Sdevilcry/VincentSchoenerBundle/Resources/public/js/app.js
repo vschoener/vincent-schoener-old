@@ -74,7 +74,11 @@ function scrollYByRange($container, y, duration) {
 $(document).ready(function($) {
 
     var $skillContainer = $('.skill-container-list');
-    var $htmlScroll = $("html").niceScroll();
+    var $htmlScroll = $("html").niceScroll({
+        scrollspeed: 180,
+        // enable cursor-drag scrolling like touch devices in desktop computer
+        hwacceleration: true
+    });
     var $skillScroll = $skillContainer.niceScroll({cursorcolor:"#008CBA"});
 
     $('.card').matchHeight();
